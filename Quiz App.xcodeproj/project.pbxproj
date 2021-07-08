@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		FA2E3B1A269756E600DAB2E8 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = FA2E3B19269756E600DAB2E8 /* README.md */; };
+		FA2E3B1D26978BB000DAB2E8 /* Questions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2E3B1C26978BB000DAB2E8 /* Questions.swift */; };
 		FAEA7D10269745C3000DE802 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEA7D0F269745C3000DE802 /* AppDelegate.swift */; };
 		FAEA7D12269745C3000DE802 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEA7D11269745C3000DE802 /* SceneDelegate.swift */; };
 		FAEA7D14269745C3000DE802 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEA7D13269745C3000DE802 /* ViewController.swift */; };
@@ -18,6 +19,7 @@
 
 /* Begin PBXFileReference section */
 		FA2E3B19269756E600DAB2E8 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		FA2E3B1C26978BB000DAB2E8 /* Questions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Questions.swift; sourceTree = "<group>"; };
 		FAEA7D0C269745C3000DE802 /* Quiz App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Quiz App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAEA7D0F269745C3000DE802 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FAEA7D11269745C3000DE802 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -61,6 +63,7 @@
 			children = (
 				FAEA7D0F269745C3000DE802 /* AppDelegate.swift */,
 				FAEA7D11269745C3000DE802 /* SceneDelegate.swift */,
+				FA2E3B1C26978BB000DAB2E8 /* Questions.swift */,
 				FAEA7D13269745C3000DE802 /* ViewController.swift */,
 				FAEA7D15269745C3000DE802 /* Main.storyboard */,
 				FAEA7D18269745C7000DE802 /* Assets.xcassets */,
@@ -142,6 +145,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FAEA7D14269745C3000DE802 /* ViewController.swift in Sources */,
+				FA2E3B1D26978BB000DAB2E8 /* Questions.swift in Sources */,
 				FAEA7D10269745C3000DE802 /* AppDelegate.swift in Sources */,
 				FAEA7D12269745C3000DE802 /* SceneDelegate.swift in Sources */,
 			);

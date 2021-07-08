@@ -16,7 +16,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background-1" translatesAutoresizingMaskIntoConstraints="NO" id="5uq-DW-lX6">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="5uq-DW-lX6" userLabel="Background View">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="pI8-Ln-1Xh">
@@ -45,49 +45,59 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="CAC-Hd-EAb">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="406.5"/>
                                                 <subviews>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b4l-jK-IJq" userLabel="Right View">
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b4l-jK-IJq" userLabel="True View">
                                                         <rect key="frame" x="0.0" y="0.0" width="414" height="129"/>
                                                         <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gjs-HW-ln5" userLabel="Right Button">
-                                                                <rect key="frame" x="10" y="0.0" width="394" height="129"/>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gjs-HW-ln5" userLabel="True Button">
+                                                                <rect key="frame" x="82" y="35.5" width="250" height="58"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="250" id="gxd-a9-5d5"/>
+                                                                    <constraint firstAttribute="height" constant="58" id="kWc-i7-6nm"/>
+                                                                </constraints>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                                                <state key="normal" title="Right" backgroundImage="QuizButton">
+                                                                <state key="normal" title="True" backgroundImage="QuizButton">
                                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                                 </state>
+                                                                <connections>
+                                                                    <action selector="buttonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hBX-cb-5XT"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                         <constraints>
-                                                            <constraint firstItem="Gjs-HW-ln5" firstAttribute="leading" secondItem="b4l-jK-IJq" secondAttribute="leading" constant="10" id="Z6f-np-QI5"/>
-                                                            <constraint firstAttribute="trailing" secondItem="Gjs-HW-ln5" secondAttribute="trailing" constant="10" id="hmC-ek-kuT"/>
-                                                            <constraint firstItem="Gjs-HW-ln5" firstAttribute="top" secondItem="b4l-jK-IJq" secondAttribute="top" id="nr1-cz-NFe"/>
-                                                            <constraint firstAttribute="bottom" secondItem="Gjs-HW-ln5" secondAttribute="bottom" id="s1V-4A-cmT"/>
+                                                            <constraint firstItem="Gjs-HW-ln5" firstAttribute="centerY" secondItem="b4l-jK-IJq" secondAttribute="centerY" id="66y-ek-bem"/>
+                                                            <constraint firstItem="Gjs-HW-ln5" firstAttribute="centerX" secondItem="b4l-jK-IJq" secondAttribute="centerX" id="xOP-Ir-Ba4"/>
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p6y-A8-MNH" userLabel="False View">
                                                         <rect key="frame" x="0.0" y="139" width="414" height="128.5"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jNh-Zo-TjH" userLabel="False Button">
-                                                                <rect key="frame" x="10" y="0.0" width="394" height="128.5"/>
+                                                                <rect key="frame" x="82" y="35.5" width="250" height="58"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="58" id="9CA-po-8kE"/>
+                                                                    <constraint firstAttribute="width" constant="250" id="Ovt-ra-3Rk"/>
+                                                                </constraints>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                                                 <state key="normal" title="False" backgroundImage="QuizButton">
                                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                                 </state>
+                                                                <connections>
+                                                                    <action selector="buttonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Grl-tn-MM8"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                         <constraints>
-                                                            <constraint firstAttribute="bottom" secondItem="jNh-Zo-TjH" secondAttribute="bottom" id="DFf-oI-K8j"/>
-                                                            <constraint firstAttribute="trailing" secondItem="jNh-Zo-TjH" secondAttribute="trailing" constant="10" id="JBl-XY-xjR"/>
-                                                            <constraint firstItem="jNh-Zo-TjH" firstAttribute="top" secondItem="p6y-A8-MNH" secondAttribute="top" id="dJR-tN-XVc"/>
-                                                            <constraint firstItem="jNh-Zo-TjH" firstAttribute="leading" secondItem="p6y-A8-MNH" secondAttribute="leading" constant="10" id="hnO-wK-mCq"/>
+                                                            <constraint firstItem="jNh-Zo-TjH" firstAttribute="centerY" secondItem="p6y-A8-MNH" secondAttribute="centerY" id="9P7-Ab-Jqz"/>
+                                                            <constraint firstItem="jNh-Zo-TjH" firstAttribute="centerX" secondItem="p6y-A8-MNH" secondAttribute="centerX" id="cku-gJ-kol"/>
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x29-se-hrp" userLabel="Progress View">
                                                         <rect key="frame" x="0.0" y="277.5" width="414" height="129"/>
                                                         <subviews>
-                                                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="K7s-A9-XVT">
-                                                                <rect key="frame" x="10" y="61.5" width="394" height="6"/>
+                                                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progressViewStyle="bar" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="K7s-A9-XVT">
+                                                                <rect key="frame" x="10" y="63.5" width="394" height="3"/>
                                                                 <constraints>
-                                                                    <constraint firstAttribute="height" constant="6" id="sOt-mU-Dqw"/>
+                                                                    <constraint firstAttribute="height" constant="2" id="sOt-mU-Dqw"/>
                                                                 </constraints>
                                                             </progressView>
                                                         </subviews>
@@ -124,6 +134,11 @@
                             <constraint firstItem="pI8-Ln-1Xh" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="x5b-fO-I0u"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="mainLabel" destination="BVj-sE-HD5" id="ZNv-zU-XoG"/>
+                        <outlet property="progressBar" destination="x29-se-hrp" id="59s-o2-xu7"/>
+                        <outlet property="trueButton" destination="Gjs-HW-ln5" id="zsn-4Q-8sp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -132,7 +147,7 @@
     </scenes>
     <resources>
         <image name="QuizButton" width="800" height="207"/>
-        <image name="background-1" width="581.5" height="876.5"/>
+        <image name="background" width="581.5" height="876.5"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
