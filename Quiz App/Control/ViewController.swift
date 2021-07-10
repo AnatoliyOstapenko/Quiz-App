@@ -12,15 +12,12 @@ class ViewController: UIViewController {
     
     // initialized Timer class by variable timer added
     var timer = Timer()
-    // audio player variable created from AVFoundation
+    // audio player variable initialized from AVFoundation
     var audioPlayer = AVAudioPlayer()
     
-    let quiz = [
-        Questions(ask: "Four + Two is equal to Six", reply: "False"),
-        Questions(ask: "Five + One is equal to Ten", reply: "False"),
-        Questions(ask: "Two + Two is equal to Four", reply: "True")
-    ]
-    var questionNumber = 0
+    // QuestionBrain structure is initialized
+    var questionBrain = QuestionBrain()
+    
     var progress: Float = 1
     var sound = "True"
 
@@ -32,6 +29,7 @@ class ViewController: UIViewController {
     
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         updateUI()
         progressBar.progress = progress
@@ -40,15 +38,13 @@ class ViewController: UIViewController {
     @IBAction func buttonPressed(_ sender: UIButton) {
         
         // transfered from button False or True (default label button names)
-        // // unwrapping current tittle of button with guard statement
+        // unwrapping current tittle of button with guard statement
         guard let currentAnswer = sender.currentTitle else {
             return
         }
-        //retrieve answer from quiz array
-        let rightAnswer = quiz[questionNumber].reply
-        
-        // changed the background color of pressed button
-        if currentAnswer == rightAnswer {
+        // initialize result of check answer from Question Brain structure
+        // changed the background color of pressed button and sound plays
+        if questionBrain.checkAnswer(answer: currentAnswer) {
             
             sound = "True"
             sender.backgroundColor = UIColor.green
@@ -78,10 +74,8 @@ class ViewController: UIViewController {
     }
     
     func updateUI() {
-        // transfer a next question and progress bar on screen
-        mainLabel.text =  quiz[questionNumber].ask
-        
-     
+        // transfer a next question from QB struct and progress bar on screen
+        mainLabel.text = questionBrain.getQuestionAsk()
         
     }
     // counter created

@@ -5,7 +5,7 @@
 //  Created by MacBook on 08.07.2021.
 //
 // Created a new swift file Question clicking on the folder Quiz App
-// new file is needed to place our ctructure with questions
+// new file is needed to place our structure with questions
 import Foundation
 struct Questions {
     let ask: String
