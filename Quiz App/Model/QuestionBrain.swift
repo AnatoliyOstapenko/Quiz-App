@@ -11,18 +11,22 @@ struct QuestionBrain {
     
     var questionNumber = 0
     var progress: Float = 1
+    var score = 0
     
     let quiz = [
-        Questions(ask: "Four + Two is equal to Six", reply: "False"),
-        Questions(ask: "Five + One is equal to Ten", reply: "False"),
-        Questions(ask: "Two + Two is equal to Four", reply: "True")
+         Questions(ask: "Which is the largest organ in the human body?", reply: ["Heart", "Skin", "Large Intestine"], correctAnswer: "Skin"),
+                Questions(ask: "Five dollars is worth how many nickels?", reply: ["25", "50", "100"], correctAnswer: "100"),
+                Questions(ask: "What do the letters in the GMT time zone stand for?", reply: ["Global Meridian Time", "Greenwich Mean Time", "General Median Time"], correctAnswer: "Greenwich Mean Time"),
+                Questions(ask: "What is the French word for 'hat'?", reply: ["Chapeau", "Écharpe", "Bonnet"], correctAnswer: "Chapeau"),
+                Questions(ask: "In past times, what would a gentleman keep in his fob pocket?", reply: ["Notebook", "Handkerchief", "Watch"], correctAnswer: "Watch"),
     ]
     
     
     
     // set func to check user answer from View with answer in Model
-    func checkAnswer(answer correctAnswer: String) -> Bool {
+    mutating func checkAnswer(answer correctAnswer: String) -> Bool {
         if correctAnswer == quiz[questionNumber].reply {
+            score += 1
             return true
         } else {
             return false
@@ -35,18 +39,23 @@ struct QuestionBrain {
     }
     
     mutating func nextQuestion() {
-        // it's loop for count up question in quiz array and countdown progress bar
+        // it's loop for count up question in quiz array and countdown of progress bar
         if questionNumber + 1 < quiz.count {
-            questionNumber += 1
             progress -= 1 / Float(quiz.count)
+            questionNumber += 1
 
         } else {
             questionNumber = 0
             progress = 1
-
+            score = 0
         }
-        print("QB: questionNumber \(questionNumber)")
-        print("QB: progress \(progress)")
+    
+    
+    }
+
+    
+    func getScore() -> Int {
+        return score
     }
  
     

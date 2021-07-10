@@ -23,7 +23,10 @@ class ViewController: UIViewController {
     // added variable currentSound to transfer to func plpaySound a true or false string
     var currentSound = "True"
     
-
+    
+    
+    @IBOutlet weak var scoreLabel: UILabel!
+    
     @IBOutlet weak var mainLabel: UILabel!
     @IBOutlet weak var falseButton: UIButton!
     
@@ -36,6 +39,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         updateUI()
         progressBar.progress = 1
+        //scoreLabel.text = "Score: \(score)"
     }
 
     @IBAction func buttonPressed(_ sender: UIButton) {
@@ -49,6 +53,7 @@ class ViewController: UIViewController {
         // changed the background color of pressed button and sound plays
         if questionBrain.checkAnswer(answer: currentAnswer) {
             
+            //questionBrain.score += 1
             currentSound = "True"
             sender.backgroundColor = UIColor.green
            
@@ -60,35 +65,35 @@ class ViewController: UIViewController {
         }
         //initialize from QB loop for count up question in quiz array and countdown progress bar
         questionBrain.nextQuestion()
+        //questionBrain.getProggres()
+        sound.playSound(currentSound)
 
         //initilizaton of timer and fetched data to fair
-        timer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(counter), userInfo: nil, repeats: false)
+        timer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(updateUI), userInfo: nil, repeats: false)
         
         // play sound from Sound struct while true/false string trnsferred to Sound struct
-        sound.playSound(currentSound)
+        
         updateUI()
+        
         
    
 
     }
-    
-    func updateUI() {
-        // transfer a next question from QB struct and progress bar on screen
-        mainLabel.text = questionBrain.getQuestionAsk()
+    // counter set in updateUI function
+    @objc func updateUI() {
+        
         // get a current progress to show it on the screen
         progressBar.progress = questionBrain.progress
+        // show a current score on the screen
+        scoreLabel.text = "Score: \(questionBrain.getScore())"
+        // transfer a next question from QB struct and progress bar on screen
+        mainLabel.text = questionBrain.getQuestionAsk()
         
-        
-    }
-    // counter created
-    @objc func counter() {
         // when time is over triggered clear method
         trueButton.backgroundColor = UIColor.clear
         falseButton.backgroundColor = UIColor.clear
-
-
     }
-
+    
     
     
 }

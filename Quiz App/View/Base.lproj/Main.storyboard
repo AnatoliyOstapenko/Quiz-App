@@ -31,11 +31,22 @@
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="1Qi-5U-CgF" userLabel="Score Label">
+                                                <rect key="frame" x="40" y="40" width="60" height="20.5"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="60" id="afK-uz-G5R"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <constraints>
+                                            <constraint firstItem="1Qi-5U-CgF" firstAttribute="top" secondItem="dHg-ix-MGj" secondAttribute="top" constant="40" id="AA3-v1-6YF"/>
                                             <constraint firstItem="BVj-sE-HD5" firstAttribute="leading" secondItem="dHg-ix-MGj" secondAttribute="leading" id="Bbx-MQ-aP7"/>
                                             <constraint firstAttribute="trailing" secondItem="BVj-sE-HD5" secondAttribute="trailing" id="Yl3-rf-xbs"/>
                                             <constraint firstAttribute="bottom" secondItem="BVj-sE-HD5" secondAttribute="bottom" id="cfS-Ae-WG0"/>
+                                            <constraint firstItem="1Qi-5U-CgF" firstAttribute="leading" secondItem="dHg-ix-MGj" secondAttribute="leading" constant="40" id="iDo-44-hHb"/>
                                             <constraint firstItem="BVj-sE-HD5" firstAttribute="top" secondItem="dHg-ix-MGj" secondAttribute="top" id="m4a-jH-0yN"/>
                                         </constraints>
                                     </view>
@@ -45,17 +56,35 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="CAC-Hd-EAb">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="406.5"/>
                                                 <subviews>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b4l-jK-IJq" userLabel="True View">
-                                                        <rect key="frame" x="0.0" y="0.0" width="414" height="129"/>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="edE-35-KSl" userLabel="Top Button View">
+                                                        <rect key="frame" x="0.0" y="0.0" width="414" height="94"/>
                                                         <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gjs-HW-ln5" userLabel="True Button">
-                                                                <rect key="frame" x="82" y="35.5" width="250" height="58"/>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9fo-Sz-1Iy" userLabel="Top Button">
+                                                                <rect key="frame" x="82" y="22" width="250" height="50"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="50" id="97W-Wo-i6Y"/>
+                                                                    <constraint firstAttribute="width" constant="250" id="HCd-OL-drE"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                                                <state key="normal" title="Choice 1" backgroundImage="QuizButton"/>
+                                                            </button>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstItem="9fo-Sz-1Iy" firstAttribute="centerY" secondItem="edE-35-KSl" secondAttribute="centerY" id="dYt-sP-3CI"/>
+                                                            <constraint firstItem="9fo-Sz-1Iy" firstAttribute="centerX" secondItem="edE-35-KSl" secondAttribute="centerX" id="gb2-ox-Kcx"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b4l-jK-IJq" userLabel="Midle Butoon View">
+                                                        <rect key="frame" x="0.0" y="104" width="414" height="94.5"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gjs-HW-ln5" userLabel="Midle Button">
+                                                                <rect key="frame" x="82" y="22" width="250" height="50"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="250" id="gxd-a9-5d5"/>
-                                                                    <constraint firstAttribute="height" constant="58" id="kWc-i7-6nm"/>
+                                                                    <constraint firstAttribute="height" constant="50" id="kWc-i7-6nm"/>
                                                                 </constraints>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                                                <state key="normal" title="True" backgroundImage="QuizButton">
+                                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                                <state key="normal" title="Choice 2" backgroundImage="QuizButton">
                                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                                 </state>
                                                                 <connections>
@@ -68,17 +97,17 @@
                                                             <constraint firstItem="Gjs-HW-ln5" firstAttribute="centerX" secondItem="b4l-jK-IJq" secondAttribute="centerX" id="xOP-Ir-Ba4"/>
                                                         </constraints>
                                                     </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p6y-A8-MNH" userLabel="False View">
-                                                        <rect key="frame" x="0.0" y="139" width="414" height="128.5"/>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p6y-A8-MNH" userLabel="Bottom Button View">
+                                                        <rect key="frame" x="0.0" y="208.5" width="414" height="94"/>
                                                         <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jNh-Zo-TjH" userLabel="False Button">
-                                                                <rect key="frame" x="82" y="35.5" width="250" height="58"/>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jNh-Zo-TjH" userLabel="Bottom Button">
+                                                                <rect key="frame" x="82" y="22" width="250" height="50"/>
                                                                 <constraints>
-                                                                    <constraint firstAttribute="height" constant="58" id="9CA-po-8kE"/>
+                                                                    <constraint firstAttribute="height" constant="50" id="9CA-po-8kE"/>
                                                                     <constraint firstAttribute="width" constant="250" id="Ovt-ra-3Rk"/>
                                                                 </constraints>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                                                <state key="normal" title="False" backgroundImage="QuizButton">
+                                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                                <state key="normal" title="Choice 3" backgroundImage="QuizButton">
                                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                                 </state>
                                                                 <connections>
@@ -92,10 +121,10 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x29-se-hrp" userLabel="Progress View">
-                                                        <rect key="frame" x="0.0" y="277.5" width="414" height="129"/>
+                                                        <rect key="frame" x="0.0" y="312.5" width="414" height="94"/>
                                                         <subviews>
                                                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progressViewStyle="bar" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="K7s-A9-XVT">
-                                                                <rect key="frame" x="10" y="63.5" width="394" height="3"/>
+                                                                <rect key="frame" x="10" y="46" width="394" height="3"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="2" id="sOt-mU-Dqw"/>
                                                                 </constraints>
@@ -138,6 +167,7 @@
                         <outlet property="falseButton" destination="jNh-Zo-TjH" id="TiK-Ky-HMg"/>
                         <outlet property="mainLabel" destination="BVj-sE-HD5" id="ZNv-zU-XoG"/>
                         <outlet property="progressBar" destination="K7s-A9-XVT" id="TJ5-uv-9Wl"/>
+                        <outlet property="scoreLabel" destination="1Qi-5U-CgF" id="Drd-Z0-DNN"/>
                         <outlet property="trueButton" destination="Gjs-HW-ln5" id="zsn-4Q-8sp"/>
                     </connections>
                 </viewController>
