@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		FA2E3B1A269756E600DAB2E8 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = FA2E3B19269756E600DAB2E8 /* README.md */; };
 		FA2E3B1D26978BB000DAB2E8 /* Questions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2E3B1C26978BB000DAB2E8 /* Questions.swift */; };
+		FA5A043226998E4A005BABAD /* False.wav in Resources */ = {isa = PBXBuildFile; fileRef = FA5A043126998E4A005BABAD /* False.wav */; };
+		FA5A043526998E5F005BABAD /* True.wav in Resources */ = {isa = PBXBuildFile; fileRef = FA5A043426998E5F005BABAD /* True.wav */; };
 		FAEA7D10269745C3000DE802 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEA7D0F269745C3000DE802 /* AppDelegate.swift */; };
 		FAEA7D12269745C3000DE802 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEA7D11269745C3000DE802 /* SceneDelegate.swift */; };
 		FAEA7D14269745C3000DE802 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEA7D13269745C3000DE802 /* ViewController.swift */; };
@@ -20,6 +22,8 @@
 /* Begin PBXFileReference section */
 		FA2E3B19269756E600DAB2E8 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		FA2E3B1C26978BB000DAB2E8 /* Questions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Questions.swift; sourceTree = "<group>"; };
+		FA5A043126998E4A005BABAD /* False.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = False.wav; sourceTree = "<group>"; };
+		FA5A043426998E5F005BABAD /* True.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = True.wav; sourceTree = "<group>"; };
 		FAEA7D0C269745C3000DE802 /* Quiz App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Quiz App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAEA7D0F269745C3000DE802 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FAEA7D11269745C3000DE802 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -41,9 +45,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FA5A043026998E24005BABAD /* Sound */ = {
+			isa = PBXGroup;
+			children = (
+				FA5A043126998E4A005BABAD /* False.wav */,
+				FA5A043426998E5F005BABAD /* True.wav */,
+			);
+			path = Sound;
+			sourceTree = "<group>";
+		};
 		FAEA7D03269745C3000DE802 = {
 			isa = PBXGroup;
 			children = (
+				FA5A043026998E24005BABAD /* Sound */,
 				FA2E3B19269756E600DAB2E8 /* README.md */,
 				FAEA7D0E269745C3000DE802 /* Quiz App */,
 				FAEA7D0D269745C3000DE802 /* Products */,
@@ -131,9 +145,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				FAEA7D1C269745C7000DE802 /* LaunchScreen.storyboard in Resources */,
+				FA5A043226998E4A005BABAD /* False.wav in Resources */,
 				FAEA7D19269745C7000DE802 /* Assets.xcassets in Resources */,
 				FA2E3B1A269756E600DAB2E8 /* README.md in Resources */,
 				FAEA7D17269745C3000DE802 /* Main.storyboard in Resources */,
+				FA5A043526998E5F005BABAD /* True.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

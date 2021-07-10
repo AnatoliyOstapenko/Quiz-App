@@ -135,8 +135,9 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="falseButton" destination="jNh-Zo-TjH" id="TiK-Ky-HMg"/>
                         <outlet property="mainLabel" destination="BVj-sE-HD5" id="ZNv-zU-XoG"/>
-                        <outlet property="progressBar" destination="x29-se-hrp" id="59s-o2-xu7"/>
+                        <outlet property="progressBar" destination="K7s-A9-XVT" id="TJ5-uv-9Wl"/>
                         <outlet property="trueButton" destination="Gjs-HW-ln5" id="zsn-4Q-8sp"/>
                     </connections>
                 </viewController>
