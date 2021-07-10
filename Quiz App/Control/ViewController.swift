@@ -6,20 +6,23 @@
 //
 
 import UIKit
-import AVFoundation
+
 
 class ViewController: UIViewController {
     
     // initialized Timer class by variable timer added
     var timer = Timer()
-    // audio player variable initialized from AVFoundation
-    var audioPlayer = AVAudioPlayer()
+    
+    // initialized Sound class by variable timer added
+    var sound = Sound()
+
     
     // QuestionBrain structure is initialized
     var questionBrain = QuestionBrain()
     
-    var progress: Float = 1
-    var sound = "True"
+    // added variable currentSound to transfer to func plpaySound a true or false string
+    var currentSound = "True"
+    
 
     @IBOutlet weak var mainLabel: UILabel!
     @IBOutlet weak var falseButton: UIButton!
@@ -32,7 +35,7 @@ class ViewController: UIViewController {
         
         super.viewDidLoad()
         updateUI()
-        progressBar.progress = progress
+        progressBar.progress = 1
     }
 
     @IBAction func buttonPressed(_ sender: UIButton) {
@@ -46,36 +49,35 @@ class ViewController: UIViewController {
         // changed the background color of pressed button and sound plays
         if questionBrain.checkAnswer(answer: currentAnswer) {
             
-            sound = "True"
+            currentSound = "True"
             sender.backgroundColor = UIColor.green
            
         } else {
             
-            sound = "False"
+            currentSound = "False"
             sender.backgroundColor = UIColor.red
             
         }
-        // it's loop for count up question in quiz array and countdown progress bar
-        if questionNumber + 1 < quiz.count {
-            questionNumber += 1
-            progress -= 1 / Float(quiz.count)
+        //initialize from QB loop for count up question in quiz array and countdown progress bar
+        questionBrain.nextQuestion()
 
-        } else {
-            questionNumber = 0
-            progress = 1
-
-        }
-       
         //initilizaton of timer and fetched data to fair
         timer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(counter), userInfo: nil, repeats: false)
         
+        // play sound from Sound struct while true/false string trnsferred to Sound struct
+        sound.playSound(currentSound)
         updateUI()
-        playSound(pressedButton: sound)
+        
+   
+
     }
     
     func updateUI() {
         // transfer a next question from QB struct and progress bar on screen
         mainLabel.text = questionBrain.getQuestionAsk()
+        // get a current progress to show it on the screen
+        progressBar.progress = questionBrain.progress
+        
         
     }
     // counter created
@@ -86,27 +88,7 @@ class ViewController: UIViewController {
 
 
     }
-    func playSound(pressedButton: String) {
-        
-        //  create URL session
-        //  change a name tittle to pressedButton
-        let url = Bundle.main.url(forResource: pressedButton, withExtension: "wav")
-        
-        //  url became optional, so I have to unwrap url, I use guard (it's shortage way)
-        guard url != nil else {
-            return
-        }
-        // Create the audio player and play the a sound from url session
-        // transfer to variable URL session, add try, and add do - carch block
-        // also I have to add exclamation mark to url
-        do {
-            audioPlayer = try AVAudioPlayer(contentsOf: url!)
-            audioPlayer.play()
-            
-        } catch {
-            print("error popped up, let's RFM again")
-        }
-    }
+
     
     
 }
