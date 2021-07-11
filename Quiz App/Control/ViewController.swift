@@ -28,9 +28,11 @@ class ViewController: UIViewController {
     @IBOutlet weak var scoreLabel: UILabel!
     
     @IBOutlet weak var mainLabel: UILabel!
-    @IBOutlet weak var falseButton: UIButton!
     
-    @IBOutlet weak var trueButton: UIButton!
+    @IBOutlet weak var bottomButton: UIButton!
+    @IBOutlet weak var topButton: UIButton!
+    @IBOutlet weak var midleButton: UIButton!
+    
     @IBOutlet weak var progressBar: UIProgressView!
     
     
@@ -39,7 +41,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         updateUI()
         progressBar.progress = 1
-        //scoreLabel.text = "Score: \(score)"
+
     }
 
     @IBAction func buttonPressed(_ sender: UIButton) {
@@ -74,9 +76,6 @@ class ViewController: UIViewController {
         // play sound from Sound struct while true/false string trnsferred to Sound struct
         
         updateUI()
-        
-        
-   
 
     }
     // counter set in updateUI function
@@ -89,9 +88,16 @@ class ViewController: UIViewController {
         // transfer a next question from QB struct and progress bar on screen
         mainLabel.text = questionBrain.getQuestionAsk()
         
-        // when time is over triggered clear method
-        trueButton.backgroundColor = UIColor.clear
-        falseButton.backgroundColor = UIColor.clear
+        // show current variants of reply from Question Brain
+        topButton.setTitle(questionBrain.replyOne(), for: .normal)
+        midleButton.setTitle(questionBrain.replyTwo(), for: .normal)
+        bottomButton.setTitle(questionBrain.replyThree(), for: .normal)
+        
+        
+        // when time is over triggered clear method to clear green/red background
+        topButton.backgroundColor = UIColor.clear
+        midleButton.backgroundColor = UIColor.clear
+        bottomButton.backgroundColor = UIColor.clear
     }
     
     

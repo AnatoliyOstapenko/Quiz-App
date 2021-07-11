@@ -27,7 +27,7 @@
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="BVj-sE-HD5">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="406.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -65,8 +65,11 @@
                                                                     <constraint firstAttribute="height" constant="50" id="97W-Wo-i6Y"/>
                                                                     <constraint firstAttribute="width" constant="250" id="HCd-OL-drE"/>
                                                                 </constraints>
-                                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                                 <state key="normal" title="Choice 1" backgroundImage="QuizButton"/>
+                                                                <connections>
+                                                                    <action selector="buttonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3yH-ef-O3u"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                         <constraints>
@@ -164,11 +167,12 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="falseButton" destination="jNh-Zo-TjH" id="TiK-Ky-HMg"/>
+                        <outlet property="bottomButton" destination="jNh-Zo-TjH" id="TiK-Ky-HMg"/>
                         <outlet property="mainLabel" destination="BVj-sE-HD5" id="ZNv-zU-XoG"/>
+                        <outlet property="midleButton" destination="Gjs-HW-ln5" id="zsn-4Q-8sp"/>
                         <outlet property="progressBar" destination="K7s-A9-XVT" id="TJ5-uv-9Wl"/>
                         <outlet property="scoreLabel" destination="1Qi-5U-CgF" id="Drd-Z0-DNN"/>
-                        <outlet property="trueButton" destination="Gjs-HW-ln5" id="zsn-4Q-8sp"/>
+                        <outlet property="topButton" destination="9fo-Sz-1Iy" id="sse-wn-lsg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

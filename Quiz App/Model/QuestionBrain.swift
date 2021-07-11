@@ -24,18 +24,31 @@ struct QuestionBrain {
     
     
     // set func to check user answer from View with answer in Model
-    mutating func checkAnswer(answer correctAnswer: String) -> Bool {
-        if correctAnswer == quiz[questionNumber].reply {
+    mutating func checkAnswer(answer userAnswer: String) -> Bool {
+        if userAnswer == quiz[questionNumber].correctAnswer {
             score += 1
             return true
         } else {
             return false
         }
     }
-    
+
     func getQuestionAsk() -> String {
        // invoked quetsion from array above
        return quiz[questionNumber].ask
+    }
+    
+    
+    // create 3 fuctions to transfer 3 reply variants to buttons in View 
+    
+    func replyOne() -> String {
+        return quiz[questionNumber].reply[0]
+    }
+    func replyTwo() -> String {
+        return quiz[questionNumber].reply[1]
+    }
+    func replyThree() -> String {
+        return quiz[questionNumber].reply[2]
     }
     
     mutating func nextQuestion() {
